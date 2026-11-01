@@ -39,9 +39,11 @@ class Settings(BaseSettings):
     ambiguity_margin: float = 0.15
 
     # Bootstrap behaviour
+    # Keep these False by default so a loaded database is never overwritten on restart.
+    # Set SEED_REFERENCE_DATA=true only on a brand-new empty database.
     auto_create_tables: bool = True
-    seed_reference_data: bool = True
-    seed_demo_users: bool = True
+    seed_reference_data: bool = False
+    seed_demo_users: bool = False
     demo_user_password: str = "ChangeMe123!"
 
     # Evaluation (relative to the backend/ working dir when running uvicorn from backend/)
