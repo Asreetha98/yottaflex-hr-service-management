@@ -1,5 +1,7 @@
 # YottaFlex AI — Enterprise HR Service Management & Policy Resolution Platform
 
+> **Candidate Technical Project Submission — YottaFlex AI**
+
 A fully functional, deterministic HR service desk platform. Employees submit HR requests; the system automatically classifies them, detects sensitive cases, retrieves the correct policy version, routes to the right team, tracks SLA deadlines, and records a full audit trail.
 
 ---
@@ -94,9 +96,7 @@ cd ..
 backend/.venv/bin/python -m generator.generate --output generator/output
 
 # Load all generated data into SQLite (takes ~30 seconds)
-DATABASE_URL=sqlite:///./yottaflex_dev.db \
-  SEED_REFERENCE_DATA=false \
-  backend/.venv/bin/python -m generator.load_to_db --input generator/output
+DATABASE_URL=sqlite:///./yottaflex_dev.db backend/.venv/bin/python -m generator.load_to_db --input generator/output
 ```
 
 > **Windows users** — replace the `\` line continuation with `^` and set env vars with `set VAR=value &&` before the command, or use Git Bash / WSL.
@@ -109,13 +109,10 @@ Open a **new terminal tab** and run:
 
 ```bash
 cd backend
-DATABASE_URL=sqlite:///../yottaflex_dev.db \
-  SEED_REFERENCE_DATA=false \
-  SEED_DEMO_USERS=false \
-  .venv/bin/uvicorn app.main:app --reload --port 8000
+DATABASE_URL=sqlite:///../yottaflex_dev.db .venv/bin/uvicorn app.main:app --reload --port 8000
 ```
 
-You should see:
+ You should see:
 ```
 INFO:     Application startup complete.
 INFO:     Uvicorn running on http://127.0.0.1:8000
@@ -139,7 +136,7 @@ npm install
 npm run dev
 ```
 
-You should see:
+ You should see:
 ```
   VITE v5.4.8  ready in ~500ms
   ➜  Local:   http://localhost:5173/
@@ -406,6 +403,4 @@ Every transition creates an immutable audit event. Invalid transitions return HT
 
 **Port already in use**
 → Change the port: `uvicorn app.main:app --port 8001` and update `VITE_API_BASE_URL=http://localhost:8001/api/v1` in your `.env`.
-
----
 
