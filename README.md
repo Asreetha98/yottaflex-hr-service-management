@@ -1,6 +1,6 @@
 # YottaFlex AI — Enterprise HR Service Management & Policy Resolution Platform
 
-> **Candidate Technical Project Submission — YottaFlex AI**
+
 
 A fully functional, deterministic HR service desk platform. Employees submit HR requests; the system automatically classifies them, detects sensitive cases, retrieves the correct policy version, routes to the right team, tracks SLA deadlines, and records a full audit trail — **with zero LLM or AI at runtime**.
 
