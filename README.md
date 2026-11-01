@@ -115,7 +115,7 @@ DATABASE_URL=sqlite:///../yottaflex_dev.db \
   .venv/bin/uvicorn app.main:app --reload --port 8000
 ```
 
-✅ You should see:
+You should see:
 ```
 INFO:     Application startup complete.
 INFO:     Uvicorn running on http://127.0.0.1:8000
@@ -139,7 +139,7 @@ npm install
 npm run dev
 ```
 
-✅ You should see:
+You should see:
 ```
   VITE v5.4.8  ready in ~500ms
   ➜  Local:   http://localhost:5173/
@@ -238,7 +238,7 @@ This creates (in `generator/output/`):
 **Prove it is reproducible:**
 ```bash
 backend/.venv/bin/python -m generator.generate --output /tmp/run2
-diff -r generator/output /tmp/run2 && echo "IDENTICAL ✅"
+diff -r generator/output /tmp/run2 && echo "IDENTICAL "
 ```
 
 **Run data validation:**
