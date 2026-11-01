@@ -1,8 +1,6 @@
 # YottaFlex AI — Enterprise HR Service Management & Policy Resolution Platform
 
-
-
-A fully functional, deterministic HR service desk platform. Employees submit HR requests; the system automatically classifies them, detects sensitive cases, retrieves the correct policy version, routes to the right team, tracks SLA deadlines, and records a full audit trail — **with zero LLM or AI at runtime**.
+A fully functional, deterministic HR service desk platform. Employees submit HR requests; the system automatically classifies them, detects sensitive cases, retrieves the correct policy version, routes to the right team, tracks SLA deadlines, and records a full audit trail.
 
 ---
 
@@ -67,8 +65,6 @@ Make sure these are installed before you start:
 ---
 
 ## Quick Setup (Local — Recommended)
-
-> Uses SQLite — **no database server needed**. Works on macOS, Linux, and Windows WSL.
 
 ### Step 1 — Clone the repository
 
@@ -246,7 +242,7 @@ diff -r generator/output /tmp/run2 && echo "IDENTICAL ✅"
 ```
 
 **Run data validation:**
-
+```bash
 backend/.venv/bin/python -m validation.report_generator \
   --input generator/output \
   --output reports/DATA_VALIDATION_REPORT.md \
@@ -259,7 +255,7 @@ Expected: `validation: PASS (injected findings=65, missed=0, unintended=0)`
 
 ## Project Structure
 
-
+```
 .
 ├── backend/
 │   ├── app/
@@ -309,6 +305,7 @@ Expected: `validation: PASS (injected findings=65, missed=0, unintended=0)`
 ├── docker-compose.yml
 ├── .env.example
 └── README.md               ← you are here
+```
 
 ---
 
@@ -409,4 +406,6 @@ Every transition creates an immutable audit event. Invalid transitions return HT
 
 **Port already in use**
 → Change the port: `uvicorn app.main:app --port 8001` and update `VITE_API_BASE_URL=http://localhost:8001/api/v1` in your `.env`.
+
+---
 
